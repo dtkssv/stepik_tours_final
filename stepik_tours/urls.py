@@ -15,12 +15,11 @@ Including another URLconf
 """
 
 from django.urls import path
-from tours.views import mainview
-from tours.views import departureview
-from tours.views import tourview
+from tours.views import mainview, departureview, tourview
+
 
 urlpatterns = [
     path('', mainview, name='main'),
-    path('departure/<str:departure>/', departureview),
-    path('tour/<int:id>/', tourview),
+    path('departure/<str:departure>/', departureview, name='departure'),
+    path('tour/<int:tour>/', tourview, name='tour'),
 ]
